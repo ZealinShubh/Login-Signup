@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './Style.css'
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
@@ -29,7 +29,7 @@ const Login = () => {
         // Validate email
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(formData.email)) {
-          newFormErrors.email = 'Invalid email address';
+          newFormErrors.email = '⚠ Invalid email address';
           isValid = false;
         } else {
           newFormErrors.email = '';
@@ -37,7 +37,7 @@ const Login = () => {
     
         // Validate password
         if (formData.password.length < 8) {
-          newFormErrors.password = 'Password must be at least 8 characters long';
+          newFormErrors.password = '⚠ Password must be at least 8 characters long';
           isValid = false;
         } else {
           newFormErrors.password = '';
@@ -68,6 +68,24 @@ const Login = () => {
           console.log('Form validation failed');
         }
       };
+
+      useEffect(() => {
+        const timeoutId = setTimeout(() => {
+          setFormErrors({ password: '' }); // Set the error message to an empty string after 2 seconds
+        }, 2400);
+    
+        // Clear the timeout if the component unmounts before the timeout completes
+        return () => clearTimeout(timeoutId);
+      }, [formErrors.password]);
+
+      useEffect(() => {
+        const timeoutId = setTimeout(() => {
+          setFormErrors({ email: '' }); // Set the error message to an empty string after 2 seconds
+        }, 2400);
+    
+        // Clear the timeout if the component unmounts before the timeout completes
+        return () => clearTimeout(timeoutId);
+      }, [formErrors.email]);
 
   return (
     <motion.div className='wrapper'
