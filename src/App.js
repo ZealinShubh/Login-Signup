@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Forgotpass from './components/LoginSignup/Forgotpass';
+import Login from './components/LoginSignup/Login';
+import Signup from './components/LoginSignup/Signup';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+// import { Button } from 'primereact/button';
+// import 'primeicons/primeicons.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Routes>
+        <Route exact path='/' element={<Login/>} />
+        <Route exact path='/signup' element={<Signup/>} />
+        <Route exact path='/forgotpassword' element={<Forgotpass/>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
