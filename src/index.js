@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'primeflex/primeflex.css';
-import "primereact/resources/themes/md-dark-indigo/theme.css";
+import "primereact/resources/themes/mdc-dark-indigo/theme.css";
 import 'primeicons/primeicons.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
