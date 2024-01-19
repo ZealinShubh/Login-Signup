@@ -8,14 +8,41 @@
     padding: 5% 10%;
 }
 
-/* @media screen and (max-width: 992px) {
-    body {
-      background-color: blue;
+@media screen and (min-width: 800px) {
+    .wrapper h1{
+        font-size: 4rem;
+        text-align: center;
     }
-  } */
+  }
+@media screen and (max-width: 700px) {
+    .remember-forget{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* margin: 100px; */
+        padding-left: 8%;
+        font-size: 8px;
+    }
+    .labeled input{
+        width: 10%;
+        height: 10%;
+        margin-top: 20px;
+    }
+    .remember-forget label{
+        padding: 2%;
+        margin-top: 15px;
+        /* font-size: 0.6em; */
+    }
+    .remember-forget a{
+        padding: 2%;
+        margin-top: 10px;
+        /* padding-right: -5%; */
+        /* font-size: 0.7em; */
+    }
+  }
 
 .wrapper h1{
-    font-size: 40px;
+    font-size: 1.4rem;
     text-align: center;
 }
 

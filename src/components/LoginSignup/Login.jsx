@@ -110,7 +110,7 @@ const Login = () => {
             </div>
             <center><div className='errordisplay'>{formErrors.password}</div></center>
             <div className="remember-forget">
-                <label><input type='checkbox' />Remember Me</label>
+                <label className='labeled'><input type='checkbox' />Remember Me</label>
                 <a href="/"><Link className="nav-link" to="/forgotpassword">Forget Password ?</Link></a>
             </div>
         <center><Button type='submit' className='submit-btn' label="Login" /></center>
